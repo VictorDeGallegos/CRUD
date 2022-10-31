@@ -1,0 +1,18 @@
+{% extends 'base.html'%} {% block titulo%} Inicio {% endblock %} {% block contenido%}
+
+<div class="row align-items-md-stretch">
+  <div class="col-md-12">
+    <div class="h-100 p-5 bg-white border rounded-3">
+      <h1>Bienvenido a mi CRUD</h1>
+      <!-- agregar linea  -->
+      <hr />
+      <p>
+        Un crud es un sistema de gestión de datos que permite crear, leer, actualizar y eliminar datos de una base de datos, este programa
+        se realizo en mi framework favorito Django utilizando MySQL
+      </p>
+      <a name="" id="" class="btn btn-success" href="{% url 'crear' %}" role="button">Comenzar</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

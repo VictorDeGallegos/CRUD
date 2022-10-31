@@ -1,0 +1,54 @@
+{% extends 'base.html'%} {% block titulo%} Lista de libros {% endblock %} {% block contenido%}
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <a name="" id="" class="btn btn-success" href="{% url 'crear' %}" role="button">Agregar nuevo Libro</a>
+        <br />
+        <br />
+
+        <h4 class="card-title">Libros</h4>
+
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- ciclo for -->
+              {% for libro in libros %}
+              <tr class="">
+                <td>{{libro.id}}</td>
+                <td>{{libro.titulo}}</td>
+                <td><img src="{{libro.imagen.url}}" height="100px" /></td>
+                <td>{{libro.descripcion}}</td>
+                <td>
+                  <a name="" id="" class="btn btn-warning" href="{% url 'editar' libro.id %}" role="button">Editar</a>
+                  <!-- boton eliminar con pregunta de confirmacion -->
+                  <a
+                    name=""
+                    id=""
+                    class="btn btn-danger"
+                    href="{% url 'eliminar' libro.id %}"
+                    role="button"
+                    onclick="return confirm('¿Estas seguro de eliminar el libro?')"
+                    >Eliminar</a
+                  >
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- <div class="card-footer text-muted">Escrito con ❤️</div> -->
+    </div>
+  </div>
+  {% endblock %}
+</div>
