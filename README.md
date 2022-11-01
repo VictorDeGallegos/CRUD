@@ -10,26 +10,6 @@ sudo apt install python3
 
 sitio oficial: <https://www.python.org/downloads/>
 
-### Instalar django
-
-Consola:
-
-```bash
-python3 -m pip install Django
-```
-
-Otra forma:
-
-```bash
-pip3 install Django
-```
-
-Consola python:
-
-```python
-print(django.get_version())
-```
-
 sitio oficial: <https://www.djangoproject.com/>
 
 ### Instalar mysql workbench
@@ -101,6 +81,8 @@ Posteriormente, se debe instalar django en el entorno virtual:
 ```bash
 pip install django
 ```
+
+**Para iniciar un proyecto basta con Pararnos sobre la carpeta CRUD:**
 
 En esta carpeta se creara una nueva carpeta llamada **sistema** el cual tendrá la estructura de carpetas y archivos necesarios para el funcionamiento de django.
 
