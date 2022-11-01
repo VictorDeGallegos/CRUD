@@ -82,6 +82,18 @@ Posteriormente, se debe instalar django en el entorno virtual:
 pip install django
 ```
 
+Instalar cryptography:
+
+```bash
+pip install cryptography
+```
+
+Instalar pillow:
+
+```bash
+pip install pillow
+```
+
 **Para iniciar un proyecto basta con Pararnos sobre la carpeta CRUD:**
 
 En esta carpeta se creara una nueva carpeta llamada **sistema** el cual tendrá la estructura de carpetas y archivos necesarios para el funcionamiento de django.
@@ -435,7 +447,7 @@ def nosotros(request):
 
 
 def libros(request):
-    return render(request, 'libros/libros.html') #Agregamos esta linea para renderizar la vista libros.html
+    return render(request, 'libros/index.html') #Agregamos esta linea para renderizar la vista libros.html
 ```
 
 Ahora debemos de crear una ruta para poder acceder a la vista libros.html, para ello debemos de dirigirnos al archivo CRUD/sistema/libreria/**urls.py** y agregar la siguiente linea.
@@ -753,6 +765,12 @@ import pymysql
 pymysql.install_as_MySQLdb()
 ```
 
+**Vaciar base de datos:**
+
+```sql
+TRUNCATE table libreria_libro
+```
+
 ## Modelo y migraciones 📦
 
 ### Modelo 📋
@@ -774,6 +792,8 @@ class Libro(models.Model):
     descripcion = models.TextField(verbose_name="Descripción", null=True)
 ```
 
+Posteriormente debemnos de crear una carpeta **imagenes** en CRUD/sistema/  donde almacenaremos las imagenes del crud.
+
 ### Migraciones 📦
 
 En este paso se crean las tablas en la base de datos, para ello debemos de ir a la terminal y ejecutar el siguiente comando
@@ -794,7 +814,7 @@ si llegase a existir algun problema con algun campo de la base de datos se debe 
 
 ## Accediendo al Admin de Django 🛠️
 
-debemos acceder a CRUD/sistema/sistema/**admin.py** para poder controlar la base de datos desde el admin de Django como estamos trabajando con modelos debemos de importar el modelo que creamos anteriormente y registrar el modelo en el admin
+debemos acceder a CRUD/sistema/libreria/**admin.py** para poder controlar la base de datos desde el admin de Django como estamos trabajando con modelos debemos de importar el modelo que creamos anteriormente y registrar el modelo en el admin
 
 ```python
 from django.contrib import admin
@@ -930,6 +950,8 @@ urlpatterns = [
     path('libros/editar', views.editar, name="editar"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #agregamos esta linea de codigo
 ```
+
+*Con esto ya podemos ver las imagenes en la vista*
 
 ## Crear estructura del formulario 📋📝
 
