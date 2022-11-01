@@ -64,6 +64,44 @@ sitio oficial: <https://code.visualstudio.com/>
 
 ### Crear una carpeta vacia llamada **CRUD**
 
+### Crear un entorno virtual
+
+Para instalar virtualenv:
+
+```bash
+pip install virtualenv
+```
+
+Para crear un entorno virtual:
+
+```bash
+virtualenv -p python3 env
+```
+
+Para activar el entorno virtual:
+
+```bash
+source env/bin/activate
+```
+
+Para ver las librerias instaladas:
+
+```bash
+pip list
+```
+
+Para desactivar el entorno virtual:
+
+```bash
+deactivate
+```
+
+Posteriormente, se debe instalar django en el entorno virtual:
+
+```bash
+pip install django
+```
+
 En esta carpeta se creara una nueva carpeta llamada **sistema** el cual tendrá la estructura de carpetas y archivos necesarios para el funcionamiento de django.
 
 ```bash
