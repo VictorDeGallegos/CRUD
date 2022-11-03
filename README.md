@@ -52,16 +52,28 @@ Para instalar virtualenv:
 pip install virtualenv
 ```
 
-Para crear un entorno virtual:
+Para crear un entorno virtual en Mac:
 
 ```bash
 virtualenv -p python3 env
 ```
 
-Para activar el entorno virtual:
+Para crear un entorno virtual en Windows:
+  
+```bash
+python -m virtualenv env
+```
+
+Para activar el entorno virtual en Mac:
 
 ```bash
 source env/bin/activate
+```
+
+Para activar el entorno virtual en Windows, estar sobre env:
+
+```bash
+source Scripts/activate
 ```
 
 Para ver las librerias instaladas:
